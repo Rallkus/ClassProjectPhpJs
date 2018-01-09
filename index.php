@@ -2,7 +2,9 @@
     session_start();
     if ((isset($_GET['page'])) && ($_GET['page']==="controller_song") ){
 		include("view/inc/top_page_song.php");
-	}else{
+	}else if((isset($_GET['page'])) && ($_GET['page']==="controller_recipe") ){
+    include("view/inc/top_page_recipe.php");
+  }else{
 		include("view/inc/top_page.php");
 	}
 ?>

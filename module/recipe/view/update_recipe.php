@@ -161,7 +161,7 @@
           ?>
         </select></td>
         <td><font color="red">
-          <span id="error_pais" class="error">
+          <span id="error_puntuation" class="error">
             <?php
             // echo $error['pais']
             ?>
@@ -326,7 +326,7 @@
           ?>
         </select></td>
         <td><font color="red">
-          <span id="error_pais" class="error">
+          <span id="error_difficulty" class="error">
             <?php
             // echo $error['pais']
             ?>
@@ -356,24 +356,24 @@
             switch ($recipe['number_persons']) {
               case '1':
               ?>
-              <input type="radio" id="number_persons" name="number_persons" placeholder="genero" value="1" checked/>1
-              <input type="radio" id="number_persons" name="number_persons" placeholder="genero" value="2"/>2
-              <input type="radio" id="number_persons" name="number_persons" placeholder="genero" value="4+"/>4+
+              <input type="radio" id="number_of_persons" name="number_of_persons" placeholder="genero" value="1" checked/>1
+              <input type="radio" id="number_of_persons" name="number_of_persons" placeholder="genero" value="2"/>2
+              <input type="radio" id="number_of_persons" name="number_of_persons" placeholder="genero" value="4+"/>4+
               <?php
               break;
               case '2':
               ?>
-              <input type="radio" id="number_persons" name="number_persons" placeholder="genero" value="1"/>1
-              <input type="radio" id="number_persons" name="number_persons" placeholder="genero" value="2" checked/>2
-              <input type="radio" id="number_persons" name="number_persons" placeholder="genero" value="4+"/>4+
+              <input type="radio" id="number_of_persons" name="number_of_persons" placeholder="genero" value="1"/>1
+              <input type="radio" id="number_of_persons" name="number_of_persons" placeholder="genero" value="2" checked/>2
+              <input type="radio" id="number_of_persons" name="number_of_persons" placeholder="genero" value="4+"/>4+
               <?php
               break;
 
               default:
               ?>
-              <input type="radio" id="number_persons" name="number_persons" placeholder="genero" value="1"/>1
-              <input type="radio" id="number_persons" name="number_persons" placeholder="genero" value="2"/>2
-              <input type="radio" id="number_persons" name="number_persons" placeholder="genero" value="4+" checked/>4+
+              <input type="radio" id="number_of_persons" name="number_of_persons" placeholder="genero" value="1"/>1
+              <input type="radio" id="number_of_persons" name="number_of_persons" placeholder="genero" value="2"/>2
+              <input type="radio" id="number_of_persons" name="number_of_persons" placeholder="genero" value="4+" checked/>4+
               <?php
               break;
             }
@@ -822,7 +822,7 @@
               ?>
             </select></td>
             <td><font color="red">
-              <span id="error_pais" class="error">
+              <span id="error_time" class="error">
                 <?php
                 // echo $error['pais']
                 ?>

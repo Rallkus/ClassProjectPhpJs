@@ -45,7 +45,7 @@
                 //if ($check){
                 //if ($result['resultado'])
                 if (true) {
-                    $_SESSION['user']=$_POST;
+                    $_SESSION['recipe']=$_POST;
                     try{
                         $daorecipe = new DAORecipe();
                         $rdo = $daorecipe->insert_recipe($_POST);

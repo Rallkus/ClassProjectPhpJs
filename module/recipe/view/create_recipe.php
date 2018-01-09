@@ -17,7 +17,7 @@
                   <option value="10">10</option>
                   </select></td>
               <td><font color="red">
-                  <span id="error_pais" class="error">
+                  <span id="error_puntuation" class="error">
                       <?php
                        //echo $error['usuario']
                       ?>
@@ -39,7 +39,7 @@
                   <option value="10">10</option>
                   </select></td>
               <td><font color="red">
-                  <span id="error_pais" class="error">
+                  <span id="error_difficulty" class="error">
                       <?php
                        //echo $error['usuario']
                       ?>
@@ -113,7 +113,7 @@
                 <td>
                   <td></td>
                   <td><font color="red">
-                    <span id="error_pais" class="error">
+                    <span id="error_time" class="error">
                         <?php
                          //echo $error['usuario']
                         ?>
@@ -126,7 +126,7 @@
                   <input type="radio" id="vegan" name="vegan" placeholder="genero" value="No" checked/>No
                     </td>
                 <td><font color="red">
-                    <span id="error_persons" class="error">
+                    <span id="error_vegan" class="error">
                         <?php
                         if(isset($error['vegan'])){
                            echo $error['vegan'];}
@@ -142,7 +142,7 @@
                 <td>Short description: </td>
                 <td><input type="text" id="description" name="description" placeholder="description" value=""/></td>
                 <td><font color="red">
-                    <span id="error_album" class="error">
+                    <span id="error_description" class="error">
                         <?php
                         if(isset($error['description'])){
                            echo $error['description'];}
@@ -157,10 +157,10 @@
                 <td>Instruction: </td>
                 <td><input type="text" id="instruction" name="instruction" placeholder="ingredient" value=""/></td>
                 <td><font color="red">
-                    <span id="error_ingredient" class="error">
+                    <span id="error_instruction" class="error">
                         <?php
-                        if(isset($error['ingredient'])){
-                           echo $error['ingredient'];}
+                        if(isset($error['instruction'])){
+                           echo $error['instruction'];}
                            else {
                              echo "";
                            }

@@ -1,130 +1,153 @@
-function validate_song(texto){
+function validate_puntuation(texto){
     if (texto.length > 0){
         return true;
     }
     return false;
 }
-function validate_album(texto){
+function validate_difficulty(texto){
     if (texto.length > 0){
         return true;
     }
     return false;
 }
-function validate_fecha(texto){
+
+function validate_recipe(texto){
     if (texto.length > 0){
         return true;
     }
     return false;
 }
-/*function validate_genero(texto){
+function validate_number_of_persons(texto){
   if (texto.length > 0){
       return true;
   }
   return false;
-}*/
-
-/*function validate_idioma(array){
-    var check=false;
-    for ( var i = 0, l = array.options.length, o; i < l; i++ ){
-        o = array.options[i];
-        if ( o.selected ){
-            check= true;
-        }
+}
+function validate_hour(texto){
+    if (texto != 0){
+        return true;
     }
-    return check;
-}*/
-function validate_grupo(texto){
+    return false;
+}
+function validate_min(texto){
+    if (texto != 0){
+        return true;
+    }
+    return false;
+}
+function validate_vegan(texto){
+  if (texto.length > 0){
+      return true;
+  }
+  return false;
+}
+function validate_description(texto){
     if (texto.length > 0){
         return true;
     }
     return false;
 }
-function validate_pais(texto){
+function validate_instruction(texto){
+    if (texto.length > 0){
+        return true;
+    }
+    return false;
+}
+function validate_image(texto){
     if (texto.length > 0){
         return true;
     }
     return false;
 }
 
-function validate_link(texto){
-    if (texto.length > 0){
-
-      var reg=/^['https://www.youtube.com/watch?v=']/;
-        return reg.test(texto);
-    }
-    return false;
-}
 
 
 
 
 
 
-
-function validate(){/*
+function validate(){
   alert("hola");
         var check=true;
 
-        var v_song=document.getElementById('nom_cancion').value;
-        var v_album=document.getElementById('album').value;
-       var v_fecha=document.getElementById('fecha').value;
-       var v_grupo=document.getElementById('grupo').value;
-       var v_pais=document.getElementById('pais').value;
-       var v_link=document.getElementById('link').value;
+        var v_puntuation=document.getElementById('puntuation').value;
+        var v_difficulty=document.getElementById('difficulty').value;
+       var v_name_recipe=document.getElementById('name_recipe').value;
+       var v_number_of_persons=document.getElementById('number_of_persons').value;
+       var v_hour=document.getElementById('hour').value;
+       var v_min=document.getElementById('min').value;
+       var v_vegan=document.getElementById('vegan').value;
+       var v_description=document.getElementById('description').value;
+       var v_instruction=document.getElementById('instruction').value;
+       var v_image=document.getElementById('image').value;
 
-       var r_song=validate_song(v_song);
-       var r_album=validate_album(v_album);
-      var r_fecha=validate_fecha(v_fecha);
-      var r_grupo=validate_grupo(v_grupo);
-      var r_pais=validate_pais(v_pais);
-      var r_link=validate_link(v_link);
-      alert(!r_song);
-      if(!r_song){
-          document.getElementById('error_cancion').innerHTML = " No has introducido una canción";
+       var r_puntuation=validate_puntuation(v_puntuation);
+       var r_difficulty=validate_difficulty(v_difficulty);
+      var r_name_recipe=validate_recipe(v_name_recipe);
+      var r_number_of_persons=validate_number_of_persons(v_number_of_persons);
+      var r_hour=validate_hour(v_hour);
+      var r_min=validate_min(v_min);
+      var r_vegan=validate_vegan(v_vegan);
+      var r_description=validate_description(v_description);
+      var r_instruction=validate_instruction(v_instruction);
+      var r_image=validate_image(v_image);
+      alert(!r_puntuation);
+      if(!r_puntuation){
+          document.getElementById('error_puntuation').innerHTML = " No has introducido una puntuación";
           check=false;
-          alert("song");
       }else{
-          document.getElementById('error_cancion').innerHTML = "";
+          document.getElementById('error_puntuation').innerHTML = "";
       }
+    if(!r_difficulty){
+        document.getElementById('error_difficulty').innerHTML = " No has introducido una dificultad";
+        check=false;
+    }else{
+        document.getElementById('error_difficulty').innerHTML = "";
+    }
+    if(!r_name_recipe){
+        document.getElementById('error_recipe').innerHTML = " No has introducido un nombre para la receta";
+        check=false;
+    }else{
+        document.getElementById('error_recipe').innerHTML = "";
+    }
+    if(!r_number_of_persons){
+        document.getElementById('error_persons').innerHTML = " No has introducido un número de personas suficiente para la receta";
+        check=false;
+    }else{
+        document.getElementById('error_persons').innerHTML = "";
+    }
+    if((r_hour==false) && (r_min==false)){
+        document.getElementById('error_time').innerHTML = " No puede hacerse una receta en 0 minutos!";
+        check=false;
+    }else{
+        document.getElementById('error_time').innerHTML = "";
+    }
+    if(!r_vegan){
+        document.getElementById('error_vegan').innerHTML = " No has introducido si la receta es vegana o no";
+        check=false;
+    }else{
+        document.getElementById('error_vegan').innerHTML = "";
+    }
+    if(!r_description){
+        document.getElementById('error_description').innerHTML = " No has introducido la descripción de la receta";
+        check=false;
+    }else{
+        document.getElementById('error_description').innerHTML = "";
+    }
+    if(!r_instruction){
+        document.getElementById('error_instruction').innerHTML = " No has introducido las instrucciones de la receta";
+        check=false;
+    }else{
+        document.getElementById('error_instruction').innerHTML = "";
+    }
+    if(!r_image){
+        document.getElementById('error_image').innerHTML = " No has introducido una imagen para la receta";
+        check=false;
+    }else{
+        document.getElementById('error_image').innerHTML = "";
+    }
 
-    alert("he sudado de todos los errores");
-    if(!r_album){
-        document.getElementById('error_album').innerHTML = " No has introducido un álbum";
-        check=false;
-        alert("album");
-    }else{
-        document.getElementById('error_album').innerHTML = "";
-    }
-    if(!r_fecha){
-        document.getElementById('error_fecha').innerHTML = " No has introducido una fecha";
-        check=false;
-        alert("fecha");
-    }else{
-        document.getElementById('error_fecha').innerHTML = "";
-    }
-    if(!r_grupo){
-        document.getElementById('error_grupo').innerHTML = " No has introducido un grupo";
-        check=false;
-        alert("grupo");
-    }else{
-        document.getElementById('error_grupo').innerHTML = "";
-    }
-    if(!r_pais){
-        document.getElementById('error_pais').innerHTML = "No has introducido un país";
-        check=false;
-        alert("pais");
-    }else{
-        document.getElementById('error_pais').innerHTML = "";
-    }
-    if(!r_link){
-        document.getElementById('error_link').innerHTML = "No has introducido un link";
-        check=false;
-        alert("link");
-    }else{
-        document.getElementById('error_link').innerHTML = "";
-    }
-
-    return check;*/
-    return true;
+    return check;
+    //return true;
 
 }
