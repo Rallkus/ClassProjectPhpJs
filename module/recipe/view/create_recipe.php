@@ -1,5 +1,5 @@
 <div id="contenido">
-    <form autocomplete="on" method="post" name="alta_user" id="alta_user" onsubmit="return validate();" action="index.php?page=controller_recipe&op=create">
+    <form autocomplete="on" method="post" name="alta_user" id="alta_user" onsubmit="true;" action="index.php?page=controller_recipe&op=create">
         <h1>New recipe</h1>
         <table border='0'>
           <tr>
@@ -19,7 +19,12 @@
               <td><font color="red">
                   <span id="error_puntuation" class="error">
                       <?php
-                       //echo $error['usuario']
+                       if(isset($error['puntuation'])){
+                         echo $error['puntuation'];
+                       }
+                       else {
+                         echo "";
+                       }
                       ?>
                   </span>
               </font></font></td>
@@ -41,7 +46,12 @@
               <td><font color="red">
                   <span id="error_difficulty" class="error">
                       <?php
-                       //echo $error['usuario']
+                      if(isset($error['difficulty'])){
+                        echo $error['difficulty'];
+                      }
+                      else {
+                        echo "";
+                      }
                       ?>
                   </span>
               </font></font></td>
@@ -57,7 +67,6 @@
                            else {
                              echo "";
                            }
-                           //print_r(validate_song($_POST('nom_cancion')));
                         ?>
                     </span>
                 </font></font></td>
@@ -115,7 +124,11 @@
                   <td><font color="red">
                     <span id="error_time" class="error">
                         <?php
-                         //echo $error['usuario']
+                        if(isset($error['time'])){
+                           echo $error['time'];}
+                           else {
+                             echo "";
+                           }
                         ?>
                     </span>
                 </font></font></td>

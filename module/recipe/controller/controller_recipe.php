@@ -22,7 +22,7 @@
             break;
 
         case 'create';
-           //include("module/recipe/model/validate_recipe.php");
+           include("module/recipe/model/validate_recipe.php");
 
             $check = true;
 
@@ -38,13 +38,12 @@
                             'link' => ''
                     );*/
             if (isset($_POST['create'])){
-              //$result['resultado']=true;
-                //$result=validate();
 
-
-                //if ($check){
-                //if ($result['resultado'])
-                if (true) {
+                $result=validate();
+                print_r($result);
+                die();
+                if ($result['resultado']) {
+                  echo '<script language="javascript">alert("hola");</script>';
                     $_SESSION['recipe']=$_POST;
                     try{
                         $daorecipe = new DAORecipe();
@@ -71,27 +70,15 @@
             break;
 
         case 'update';
-              //include("module/recipe/model/validate_recipe.php");
+              include("module/recipe/model/validate_recipe.php");
 
             $check = true;
-            /*$error = array(
-                            'nom_cancion' => '',
-                            'album' => '',
-                            'fecha_publicacion' => '',
-                            'genero' => '',
-                            'idioma' => '',
-                            'grupo' => '',
-                            'pais' => '',
-                            'instrumento' =>'',
-                            'link' => ''
-                    );*/
+
             if (isset($_POST['update'])){
-              //$result['resultado']=true;
-              //$result=validate();
-              //$error=$result['error'];
-                //if ($check){
-                //if ($result['resultado'])
-                if (true) {
+
+              $result=validate();
+
+                if ($result['resultado']) {
                     $_SESSION['recipe']=$_POST;
                     try{
                         $daorecipe = new DAORecipe();

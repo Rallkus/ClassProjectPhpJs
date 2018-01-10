@@ -1,5 +1,5 @@
 <?php
-function validate_song($texto){
+function validate_puntuation($texto){
     if(!isset($texto) || empty($texto)){
         return false;
     }else{
@@ -7,59 +7,64 @@ function validate_song($texto){
     }
 }
 
-function validate_album($texto){
-    if(empty($texto)){
-        return false;
-    }else{
-        return true;
-    }
-}
-function validate_fecha($texto){
-    if(empty($texto)){
-        return false;
-    }else{
-        return true;
-    }
-}
-
-function validate_genero($texto){
+function validate_difficulty($texto){
     if(!isset($texto) || empty($texto)){
         return false;
     }else{
         return true;
     }
 }
-function validate_idioma($texto){
+function validate_recipe($texto){
     if(!isset($texto) || empty($texto)){
         return false;
     }else{
         return true;
     }
 }
-function validate_grupo($texto){
-    if(empty($texto)){
-        return false;
-    }else{
-        return true;
-    }
-}
-
-function validate_pais($texto){
+function validate_number_of_persons($texto){
     if(!isset($texto) || empty($texto)){
         return false;
     }else{
         return true;
     }
 }
-function validate_instrumento($texto){
+function validate_hour($texto){
+    if(!isset($texto) || $texto == 0){
+        return false;
+    }else{
+        return true;
+    }
+}
+function validate_min($texto){
+    if(!isset($texto) || $texto == 0){
+        return false;
+    }else{
+        return true;
+    }
+}
+function validate_vegan($texto){
     if(!isset($texto) || empty($texto)){
         return false;
     }else{
         return true;
     }
 }
-function validate_link($texto){
-    if(empty($texto)){
+function validate_description($texto){
+    if(!isset($texto) || empty($texto)){
+        return false;
+    }else{
+        return true;
+    }
+}
+function validate_instruction($texto){
+    if(!isset($texto) || empty($texto)){
+        return false;
+    }else{
+        return true;
+    }
+}
+function validate_image($texto){
+    if(!isset($texto) || empty($texto)){
         return false;
     }else{
         return true;
@@ -69,117 +74,106 @@ function validate_link($texto){
 
 
     function validate(){
-        $check='';
-        $check='True';
-        print_r($check);
 
         $error=array();
+        $val='True';
+        $v_puntuation=$_POST['puntuation'];
+        $v_difficulty=$_POST['difficulty'];
+        $v_name_recipe=$_POST['name_recipe'];
+        if(isset($_POST['number_of_persons'])){
+          $v_number_of_persons=$_POST['number_of_persons'];
+        }else{
+          $v_number_of_persons="";
+        }
+        $v_hour=$_POST['hour'];
+        $v_min=$_POST['min'];
+        if(isset($_POST['vegan'])){
+          $v_vegan=$_POST['vegan'];
+        }else{
+          $v_vegan="";
+        }
+        $v_description=$_POST['description'];
+        $v_instruction=$_POST['instruction'];
+        $v_image=$_POST['image'];
 
-        $v_song=$_POST['nom_cancion'];
-        $v_album=$_POST['album'];
-        $v_fecha=$_POST['fecha_publicacion'];
-        if(isset($_POST['genero'])){
-          $v_genero=$_POST['genero'];
-        }else{
-          $v_genero="";
-        }
-        if(isset($_POST['idioma'])){
-          $v_idioma=$_POST['idioma'];
-        }else{
-          $v_idioma="";
-        }
-        $v_grupo=$_POST['grupo'];
-        $v_pais=$_POST['pais'];
-        if(isset($_POST['instrumento'])){
-          $v_instrumentos=$_POST['instrumento'];
-        }else{
-          $v_instrumentos="";
-        }
+        $r_puntuation=validate_puntuation($v_puntuation);
+        $r_difficulty=validate_difficulty($v_difficulty);
+        $r_name_recipe=validate_recipe($v_name_recipe);
+        $r_number_of_persons=validate_number_of_persons($v_number_of_persons);
+        $r_hour=validate_hour($v_hour);
+        $r_min=validate_min($v_min);
+        $r_vegan=validate_vegan($v_vegan);
+        $r_description=validate_description($v_description);
+        $r_instruction=validate_instruction($v_instruction);
+        $r_image=validate_image($v_image);
 
-        $v_link=$_POST['link'];
-
-        $r_song=validate_song($v_song);
-        $r_album=validate_album($v_album);
-        $r_fecha=validate_fecha($v_fecha);
-        $r_genero=validate_genero($v_genero);
-        $r_idioma=validate_idioma($v_idioma);
-        $r_grupo=validate_grupo($v_grupo);
-        $r_pais=validate_pais($v_pais);
-        $r_instrumentos=validate_instrumento($v_instrumentos);
-        $r_link=validate_link($v_link);
-
-        if(!$r_song){
-            $error_song = " No has introducido una canción ";
-            $check=False;
+        if(!$r_puntuation){
+            $error_puntuation = " No has introducido una puntuación ";
         }else{
-            $error_song = "";
+            $error_puntuation = "";
         }
-        if(!$r_album){
-            $error_album = " No has introducido un álbum";
-            $check=False;
+        if(!$r_difficulty){
+            $error_difficulty = " No has introducido una dificultad";
         }else{
-            $error_album = "";
+            $error_difficulty = "";
         }
-        if(!$r_fecha){
-            $error_fecha = " No has introducido una fecha";
-            $check=False;
+        if(!$r_name_recipe){
+            $error_name_recipe = " No has introducido una receta";
         }else{
-            $error_fecha = "";
+            $error_name_recipe = "";
         }
-        if(!$r_genero){
-            $error_genero = " No has introducido un género";
-            $check=False;
+        if(!$r_number_of_persons){
+            $error_number_of_persons = " No has introducido una cantidad de personas";
         }else{
-            $error_genero = "";
+            $error_number_of_persons = "";
         }
-        if(!$r_idioma){
-            $error_idioma = " No has introducido un idioma";
-            $check=False;
+          if(($r_hour==false) && ($r_min==false)){
+            $error_time = " No puede hacerse una receta en 0 minutos!";
         }else{
-            $error_idioma = "";
+            $error_time = "";
         }
-        if(!$r_grupo){
-            $error_grupo = " No has introducido un grupo";
-            $check=False;
+        if(!$r_vegan){
+            $error_vegan = " No has introducido si la receta es vegana";
         }else{
-            $error_grupo = "";
+            $error_vegan = "";
         }
-        if($r_pais !== 1){
-            $error_pais = " No has introducido un país";
-            $check=False;
+        if(!$r_description){
+            $error_description = " No has introducido una cantidad de personas";
         }else{
-            $error_pais = "";
+            $error_description = "";
         }
-        if(!$r_instrumentos){
-            $error_instrumentos = " No has introducido ningún instrumento";
-            $check=False;
+        if(!$r_instruction){
+            $error_instruction = " No has introducido las instrucciones de la receta";
         }else{
-            $error_instrumentos = "";
+            $error_instruction = "";
         }
-        if(!$r_link){
-            $error_link = " No has introducido un link";
-            $check=False;
+        if(!$r_image){
+            $error_image = " No has introducido una imagen";
         }else{
-            $error_link = "";
+            $error_image = "";
         }
         $error = array(
-          'nom_cancion' => $error_song,
-          'album' => $error_album,
-          'fecha_publicacion' => $error_fecha,
-          'genero' => $error_genero,
-          'idioma' => $error_idioma,
-          'grupo' => $error_grupo,
-          'pais' => $error_pais,
-          'instrumento' =>$error_instrumentos,
-          'link' => $error_link
+          'puntation' => $error_puntuation,
+          'difficulty' => $error_difficulty,
+          'name_recipe' => $error_name_recipe,
+         'persons' => $error_number_of_persons,
+          'time' => $error_time,
+          'vegan' => $error_vegan,
+          'description' => $error_description,
+          'instruction' =>$error_instruction,
+          'image' => $error_image
                         );
-        $val=true;
-        if(!$r_song || !$r_album || !$r_fecha || !$r_genero || !$r_idioma || !$r_grupo || !$r_pais || !$r_instrumentos || !$r_link){
-            $val=false;
+
+        if(!$r_puntuation || !$r_difficulty || !$r_name_recipe || !$r_number_of_persons || ($error_time!="") || !$error_vegan || !$error_description || !$error_instruction || !$error_image){
+          echo $r_puntuation . $r_difficulty . $r_name_recipe . $r_number_of_persons . ($error_time!="") . $error_vegan . $error_description . $error_instruction . $error_image;
+                      $val='False';
         }
+        echo $val . "    dsadasd";
+        print_r (isset($val));
+
         $resultado=array('resultado'=>$val , 'error'=>$error);
-        print_r($resultado);
+        print_r ($resultado);
+        die();
         return $resultado;
 
-        //return $check;
     }
