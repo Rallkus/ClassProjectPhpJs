@@ -27,8 +27,8 @@
                     	   	echo '<td width=125>'. $row['difficult'] . '</td>';
                     	   	echo '<td width=125>'. $row['name'] . '</td>';
                     	   	echo '<td width=350>';
-                          print ("<div class='recipe' id='".$row['id']."'>Read</div>");  //READ
-                    	    echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+                          print ("<div class='recipe Button_blue' id='".$row['id']."'>Read</div>");  //READ
+                    	    //echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
                     	   	//echo '<a class="Button_blue" href="index.php?page=controller_recipe&op=read&id='.$row['id'].'">Read</a>';
                     	   	echo '&nbsp;';
                     	   	echo '<a class="Button_green" href="index.php?page=controller_recipe&op=update&id='.$row['id'].'">Update</a>';

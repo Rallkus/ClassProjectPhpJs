@@ -177,7 +177,7 @@ $(document).ready(function () {
                     $("#image").html(json.image);
 
                     $("#details_recipe").show();
-                    $("#user_modal").dialog({
+                    $("#recipe_modal").dialog({
                         width: 850, //<!-- ------------- ancho de la ventana -->
                         height: 500, //<!--  ------------- altura de la ventana -->
                         //show: "scale", <!-- ----------- animación de la ventana al aparecer -->

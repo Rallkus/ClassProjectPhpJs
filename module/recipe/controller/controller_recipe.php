@@ -187,7 +187,7 @@
 
                 include("module/recipe/view/delete_all.php");
                 break;
-            case 'read_modal':
+            case 'read_modal';
                     //echo $_GET["modal"];
                     //exit;
 

@@ -77,7 +77,7 @@ h1{
 	position:relative;
 	top:1px;
 }
-.Button_blue {
+ .Button_blue{
 	background-color:blue;
 	-moz-border-radius:28px;
 	-webkit-border-radius:28px;
