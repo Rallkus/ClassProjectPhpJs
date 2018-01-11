@@ -41,9 +41,7 @@
 
                 $result=validate();
                 print_r($result);
-                die();
                 if ($result['resultado']) {
-                  echo '<script language="javascript">alert("hola");</script>';
                     $_SESSION['recipe']=$_POST;
                     try{
                         $daorecipe = new DAORecipe();
@@ -77,7 +75,6 @@
             if (isset($_POST['update'])){
 
               $result=validate();
-
                 if ($result['resultado']) {
                     $_SESSION['recipe']=$_POST;
                     try{

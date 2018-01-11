@@ -76,7 +76,7 @@ function validate_image($texto){
     function validate(){
 
         $error=array();
-        $val='True';
+        $val=true;
         $v_puntuation=$_POST['puntuation'];
         $v_difficulty=$_POST['difficulty'];
         $v_name_recipe=$_POST['name_recipe'];
@@ -164,16 +164,15 @@ function validate_image($texto){
           'image' => $error_image
                         );
 
-        if(!$r_puntuation || !$r_difficulty || !$r_name_recipe || !$r_number_of_persons || ($error_time!="") || !$error_vegan || !$error_description || !$error_instruction || !$error_image){
-          echo $r_puntuation . $r_difficulty . $r_name_recipe . $r_number_of_persons . ($error_time!="") . $error_vegan . $error_description . $error_instruction . $error_image;
-                      $val='False';
+        if(!$r_puntuation || !$r_difficulty || !$r_name_recipe || !$r_number_of_persons || ($error_time!="") || !$r_vegan || !$r_description || !$r_instruction || !$r_image){
+                      $val=false;
         }
-        echo $val . "    dsadasd";
-        print_r (isset($val));
+
 
         $resultado=array('resultado'=>$val , 'error'=>$error);
-        print_r ($resultado);
-        die();
+      //  print_r($resultado);
+      //  die();
+
         return $resultado;
 
     }

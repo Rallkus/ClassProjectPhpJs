@@ -67,7 +67,6 @@ function validate_image(texto){
 
 
 function validate(){
-  alert("hola");
         var check=true;
 
         var v_puntuation=document.getElementById('puntuation').value;
@@ -91,7 +90,6 @@ function validate(){
       var r_description=validate_description(v_description);
       var r_instruction=validate_instruction(v_instruction);
       var r_image=validate_image(v_image);
-      alert(!r_puntuation);
       if(!r_puntuation){
           document.getElementById('error_puntuation').innerHTML = " No has introducido una puntuación";
           check=false;
