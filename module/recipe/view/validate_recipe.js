@@ -149,3 +149,57 @@ function validate(){
     //return true;
 
 }
+
+$(document).ready(function () {
+        $('.recipe').click(function () {
+            var id = this.getAttribute('id');
+            //alert(id);
+
+			$.get("module/recipe/controller/controller_recipe.php?op=read_modal&modal=" + id, function (data, status) {
+                var json = JSON.parse(data);
+                console.log(json);
+
+                if(json === 'error') {
+                  alert("hola");
+                    //console.log(json);
+                    //pintar 503
+    			    window.location.href='index.php?page=503';
+                }else{
+                    console.log(json.recipe);
+                    $("#puntuation").html(json.puntuation);
+                    $("#difficulty").html(json.difficulty);
+                    $("#name_recipe").html(json.name_recipe);
+                    $("#number_of_persons").html(json.number_of_persons);
+                    $("#time").html(json.time);
+                    $("#vegan").html(json.vegan);
+                    $("#description").html(json.description);
+                    $("#instruction").html(json.instruction);
+                    $("#image").html(json.image);
+
+                    $("#details_recipe").show();
+                    $("#user_modal").dialog({
+                        width: 850, //<!-- ------------- ancho de la ventana -->
+                        height: 500, //<!--  ------------- altura de la ventana -->
+                        //show: "scale", <!-- ----------- animación de la ventana al aparecer -->
+                        //hide: "scale", <!-- ----------- animación al cerrar la ventana -->
+                        resizable: "false", //<!-- ------ fija o redimensionable si ponemos este valor a "true" -->
+                        //position: "down",<!--  ------ posicion de la ventana en la pantalla (left, top, right...) -->
+                        modal: "true", //<!-- ------------ si esta en true bloquea el contenido de la web mientras la ventana esta activa (muy elegante) -->
+                        buttons: {
+                            Ok: function () {
+                                $(this).dialog("close");
+                            }
+                        },
+                        show: {
+                            effect: "blind",
+                            duration: 1000
+                        },
+                        hide: {
+                            effect: "explode",
+                            duration: 1000
+                        }
+                    });
+                }//end-else
+            });
+        });
+	});

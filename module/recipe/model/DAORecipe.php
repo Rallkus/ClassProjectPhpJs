@@ -1,6 +1,7 @@
 <?php
-    include("model/connect.php");
-
+    //include("model/connect.php");
+    $path = $_SERVER['DOCUMENT_ROOT'] . '/Taste/';
+    include($path . "model/connect.php");
 	class DAORecipe{
 		function insert_recipe($datos){
           $puntuation=$datos['puntuation'];

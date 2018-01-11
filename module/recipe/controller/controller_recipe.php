@@ -1,5 +1,7 @@
 <?php
-    include ("module/recipe/model/DAORecipe.php");
+    $path = $_SERVER['DOCUMENT_ROOT'] . '/Taste/';
+    include($path . "module/recipe/model/DAORecipe.php");
+    //include ("module/recipe/model/DAORecipe.php");
     //session_start();
 
     switch($_GET['op']){
@@ -185,6 +187,27 @@
 
                 include("module/recipe/view/delete_all.php");
                 break;
+            case 'read_modal':
+                    //echo $_GET["modal"];
+                    //exit;
+
+                    try{
+                        $daorecipe = new DAORecipe();
+                    	$rdo = $daorecipe->select_recipe($_GET['modal']);
+                    }catch (Exception $e){
+                        echo json_encode("error");
+                        exit;
+                    }
+                    if(!$rdo){
+            			echo json_encode("error");
+                        exit;
+            		}else{
+            		    $recipe=get_object_vars($rdo);
+                        echo json_encode($recipe);
+                        //echo json_encode("error");
+                        exit;
+            		}
+                    break;
 
 
 
