@@ -49,10 +49,10 @@
         <div id="details">
             <div id="container">
                 Puntuation: <div id="puntuation"></div></br>
-                Difficulty: <div id="difficult"></div></br>
+                Difficulty: <div id="difficulty"></div></br>
                 Name of the recipe: <div id="name_recipe"></div></br>
                 Number of persons: <div id="number_persons"></div></br>
-                Time expected: <div id="estimated_time"></div></br>
+                Time expected: <div id="time"></div></br>
                 Vegan food: <div id="vegan"></div></br>
                 Short description: <div id="description"></div></br>
                 Instruction: <div id="instruction"></div></br>

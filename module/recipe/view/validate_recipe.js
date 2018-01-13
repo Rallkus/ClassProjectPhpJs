@@ -165,12 +165,16 @@ $(document).ready(function () {
                     //pintar 503
     			    window.location.href='index.php?page=503';
                 }else{
+                    var time = json.estimated_time;
+                    var str= time.split('.');
+                    time=str[0] + " hours "+ str[1]+ " minutes"
+
                     console.log(json.recipe);
                     $("#puntuation").html(json.puntuation);
-                    $("#difficulty").html(json.difficulty);
-                    $("#name_recipe").html(json.name_recipe);
-                    $("#number_of_persons").html(json.number_of_persons);
-                    $("#time").html(json.time);
+                    $("#difficulty").html(json.difficult);
+                    $("#name_recipe").html(json.name);
+                    $("#number_persons").html(json.number_persons);
+                    $("#time").html(time);
                     $("#vegan").html(json.vegan);
                     $("#description").html(json.description);
                     $("#instruction").html(json.instruction);
@@ -192,11 +196,11 @@ $(document).ready(function () {
                         },
                         show: {
                             effect: "blind",
-                            duration: 1000
+                            duration: 500
                         },
                         hide: {
                             effect: "explode",
-                            duration: 1000
+                            duration: 500
                         }
                     });
                 }//end-else

@@ -820,7 +820,7 @@
                 break;
               }
               ?>
-            </select></td>
+            </select> minutes</td>
             <td><font color="red">
               <span id="error_time" class="error">
                 <?php
