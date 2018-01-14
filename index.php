@@ -4,6 +4,8 @@
 		include("view/inc/top_page_song.php");
 	}else if((isset($_GET['page'])) && ($_GET['page']==="controller_recipe") ){
     include("view/inc/top_page_recipe.php");
+  }else if(!(isset($_GET['page'])) || ($_GET['page']==="homepage") ){
+    include("view/inc/top_page_home.php");
   }else{
 		include("view/inc/top_page.php");
 	}

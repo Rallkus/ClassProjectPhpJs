@@ -1,6 +1,35 @@
-<div id="contenido">
-<h1>Contactanos</h1>
-<div class="GoogleMaps">
- <iframe class="map" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA3uKAu2CEjn3XAcidea1Qu2XhFdhbWM-A&q=Ontinyent,Valencia" allowfullscreen" ></iframe>
-</div>
-</div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- FONTAWESOME STYLE CSS -->
+<link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+<!-- CUSTOM STYLE CSS -->
+<link href="view/css/style.css" rel="stylesheet" />
+<!-- GOOGLE FONT -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+<section  id="contact-sec">
+       <iframe class="cnt" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2613.884828509486!2d-0.6022250880557248!3d38.82214386697137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1515947754137"> ></iframe>
+
+  <div class="add">
+ <i>Address: </i>234/JK , The Wondre Land,  Newyork Street Junction, JUST USA -10909094
+   </div>
+    <hr />
+     </section>
+      <section  class="note-sec" >
+
+               <div class="container">
+           <div class="row text-center pad-row" >
+            <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 ">
+                <i class="fa fa-quote-left fa-3x"></i>
+               <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                         Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                         Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+                            </p>
+                </div>
+               </div>
+            </div>
+
+       </section>
