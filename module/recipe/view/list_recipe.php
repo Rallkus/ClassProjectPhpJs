@@ -56,7 +56,7 @@
                 Vegan food: <div id="vegan"></div></br>
                 Short description: <div id="description"></div></br>
                 Instruction: <div id="instruction"></div></br>
-                Image: <div id="image"></div></br>
+                Image: <div id="image"><div><img src="view/img/404.jpg"/></div>
             </div>
         </div>
     </div>

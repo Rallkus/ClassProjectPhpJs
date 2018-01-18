@@ -182,7 +182,7 @@
                 </font></font></td>
             </tr><tr>
                 <td>Image: </td>
-                <td><input type="text" id="image" name="image" placeholder="image" value=""/></td>
+                <td><input type="file" id="image" name="image" placeholder="image" value=""/></td>
                 <td><font color="red">
                     <span id="error_image" class="error">
                         <?php

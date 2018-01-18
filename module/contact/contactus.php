@@ -15,21 +15,3 @@
    </div>
     <hr />
      </section>
-      <section  class="note-sec" >
-
-               <div class="container">
-           <div class="row text-center pad-row" >
-            <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 ">
-                <i class="fa fa-quote-left fa-3x"></i>
-               <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                         Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                         Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                            </p>
-                </div>
-               </div>
-            </div>
-
-       </section>
