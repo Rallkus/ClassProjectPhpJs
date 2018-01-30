@@ -8,41 +8,32 @@
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
 
       <div class="item active">
-        <img src="view/img/404.jpg" alt="Chania" width="460" height="345">
+        <img src="view/img/hojas-parra.jpg" alt="Chania" width="460" height="345">
         <div class="carousel-caption">
-          <h3>Chania</h3>
-          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+          <h3>Does it look good?</h3>
+          <p><b>The recipes you ever dreamed to do.</b></p>
         </div>
       </div>
 
       <div class="item">
-        <img src="view/img/503.jpg" alt="Chania" width="460" height="345">
+        <img src="view/img/polloypasta.jpg" alt="Chania" width="460" height="345">
         <div class="carousel-caption">
-          <h3>Chania</h3>
-          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+          <h3>Any recipe you can imagine</h3>
+          <p><b>The recipes you ever dreamed to do.</b></p>
         </div>
       </div>
 
       <div class="item">
-        <img src="view/img/404.jpg" alt="Flower" width="460" height="345">
+        <img src="view/img/recetas-marisco.jpg" alt="Flower" width="460" height="345">
         <div class="carousel-caption">
-          <h3>Flowers</h3>
-          <p>Beautiful flowers in Kolymbari, Crete.</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="view/img/503.jpg" alt="Flower" width="460" height="345">
-        <div class="carousel-caption">
-          <h3>Flowers</h3>
-          <p>Beautiful flowers in Kolymbari, Crete.</p>
+          <h3>Taste</h3>
+          <p><b>What's for dinner?.</b></p>
         </div>
       </div>
 

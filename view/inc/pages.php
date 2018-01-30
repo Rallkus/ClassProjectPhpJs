@@ -14,7 +14,7 @@ if(isset($_GET['page'])){
 			include("module/services/".$_GET['page'].".php");
 			break;
 		case "aboutus";
-			include("module/aboutus/".$_GET['page'].".php");
+			include("module/aboutus/view/".$_GET['page'].".php");
 			break;
 		case "contactus";
 			include("module/contact/".$_GET['page'].".php");
@@ -25,8 +25,11 @@ if(isset($_GET['page'])){
 		case "503";
 			include("view/inc/error".$_GET['page'].".php");
 			break;
-		default;
-			include("module/inicio/view/inicio.php");
+			case "controller_recipes";
+			include("module/highratedRecipes/controller/".$_GET['page'].".php");
+			break;
+			default;
+			include("view/inc/error404.php");
 			break;
 	}}
 	else{

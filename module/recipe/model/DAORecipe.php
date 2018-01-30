@@ -49,13 +49,17 @@
       $puntuation=$datos['puntuation'];
       $difficulty=$datos['difficulty'];
       $name_recipe=$datos['name_recipe'];
-      $number_of_persons=$datos['number_persons'];
+      $number_of_persons=$datos['number_of_persons'];
       $hour=$datos['hour'];
       $min=$datos['min'];
       $vegan=$datos['vegan'];
       $description=$datos['description'];
       $instruction=$datos['instruction'];
-      $image=$datos['image'];
+      if($datos['image']==""){
+        $image=$datos['photo'];
+      }else{
+        $image=$datos['image'];
+      }
       $time=$hour . "." . $min;
 
         	$sql = " UPDATE recipe SET puntuation='$puntuation', difficult='$difficulty', name='$name_recipe', number_persons='$number_of_persons', estimated_time='$time', vegan='$vegan',"

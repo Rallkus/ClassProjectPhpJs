@@ -31,9 +31,9 @@ h1{
  width: 1400px;
  height: 1000px;
 }
-.map{
- width: 745px;
- height: 980px;
+#map{
+  height: 700px;
+  width: 793px;
 }
 #wrapper {
 	width:800px;

@@ -1,5 +1,5 @@
 <div id="contenido">
-  <form autocomplete="on" method="post" name="update_user" id="update_user" onsubmit="return validate();" action="index.php?page=controller_recipe&op=update">
+  <form autocomplete="on" method="post" name="update_user" id="update_user" enctype="multipart/form-data" onsubmit="return validate();" action="index.php?page=controller_recipe&op=update">
     <h1>Modificar receta</h1>
     <table border='0'>
       <input type="hidden" name="id" value="<?php echo $recipe['id']?>">
@@ -896,7 +896,9 @@
                   </tr>
                   <tr>
                     <td>Image: </td>
-                    <td><input type="text" id="image" name="image" placeholder="image" value="<?php echo $recipe['image'];?>"/></td>
+                    <td><img src="<?php echo $recipe['image']?>" alt='done' value="<?php echo $recipe['image']?>">
+                    <td><input type="file" id="image" name="image" placeholder="image" value=""/></td>
+                    <input type="hidden" name="photo" id="photo" value="<?php echo $recipe['image']?>">
                     <td><font color="red">
                       <span id="error_image" class="error">
                         <?php

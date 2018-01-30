@@ -6,6 +6,10 @@
     include("view/inc/top_page_recipe.php");
   }else if(!(isset($_GET['page'])) || ($_GET['page']==="homepage") ){
     include("view/inc/top_page_home.php");
+  }else if((isset($_GET['page'])) && ($_GET['page']==="contactus") ){
+    include("view/inc/top_page_contactus.php");
+  }else if((isset($_GET['page'])) && ($_GET['page']==="controller_recipes") ){
+    include("view/inc/top_page_recipes.php");
   }else{
 		include("view/inc/top_page.php");
 	}

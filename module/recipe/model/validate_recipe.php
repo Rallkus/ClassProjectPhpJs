@@ -94,7 +94,7 @@ function validate_image($texto){
         }
         $v_description=$_POST['description'];
         $v_instruction=$_POST['instruction'];
-        $v_image=$_POST['image'];
+        //$v_image=$_POST['image'];
 
         $r_puntuation=validate_puntuation($v_puntuation);
         $r_difficulty=validate_difficulty($v_difficulty);
@@ -105,7 +105,7 @@ function validate_image($texto){
         $r_vegan=validate_vegan($v_vegan);
         $r_description=validate_description($v_description);
         $r_instruction=validate_instruction($v_instruction);
-        $r_image=validate_image($v_image);
+        //$r_image=validate_image($v_image);
 
         if(!$r_puntuation){
             $error_puntuation = " No has introducido una puntuación ";
@@ -147,11 +147,11 @@ function validate_image($texto){
         }else{
             $error_instruction = "";
         }
-        if(!$r_image){
+        /*if(!$r_image){
             $error_image = " No has introducido una imagen";
         }else{
             $error_image = "";
-        }
+        }*/
         $error = array(
           'puntation' => $error_puntuation,
           'difficulty' => $error_difficulty,
@@ -161,10 +161,10 @@ function validate_image($texto){
           'vegan' => $error_vegan,
           'description' => $error_description,
           'instruction' =>$error_instruction,
-          'image' => $error_image
+          //'image' => $error_image
                         );
 
-        if(!$r_puntuation || !$r_difficulty || !$r_name_recipe || !$r_number_of_persons || ($error_time!="") || !$r_vegan || !$r_description || !$r_instruction || !$r_image){
+        if(!$r_puntuation || !$r_difficulty || !$r_name_recipe || !$r_number_of_persons || ($error_time!="") || !$r_vegan || !$r_description || !$r_instruction/* || !$r_image*/){
                       $val=false;
         }
 

@@ -1,18 +1,16 @@
 <div id="contenido">
     <div class="container">
     	<div class="row">
-    			<h3>LISTA DE RECETAS</h3>
+    			<h3>Recetas más valoradas</h3>
     	</div>
     	<div class="row">
-    		<p><a href="index.php?page=controller_recipe&op=create"><img src="view/img/anadir.png"></a></p>
-        <p><a href="index.php?page=controller_recipe&op=deleteAll"><img src="view/img/eliminar.png"></a></p>
 
     		<table>
                 <tr>
                     <td width=125><b>Puntuation</b></th>
                     <td width=125><b>Difficulty</b></th>
                     <td width=125><b>Name</b></th>
-                    <th width=350><b>Action</b></th>
+                    <th width=350><b>Detalles</b></th>
                 </tr>
                 <?php
                     if ($rdo->num_rows === 0){
@@ -27,13 +25,11 @@
                     	   	echo '<td width=125>'. $row['difficult'] . '</td>';
                     	   	echo '<td width=125>'. $row['name'] . '</td>';
                     	   	echo '<td width=350>';
+                          echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';
+                          echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';
+                          echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';
+                          echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';echo '&nbsp;';
                           print ("<div class='recipe Button_blue' id='".$row['id']."'>Read</div>");  //READ
-                    	    //echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-                    	   	//echo '<a class="Button_blue" href="index.php?page=controller_recipe&op=read&id='.$row['id'].'">Read</a>';
-                    	   	echo '&nbsp;';
-                    	   	echo '<a class="Button_green" href="index.php?page=controller_recipe&op=update&id='.$row['id'].'">Update</a>';
-                    	   	echo '&nbsp;';
-                    	   	echo '<a class="Button_red" href="index.php?page=controller_recipe&op=delete&id='.$row['id'].'">Delete</a>';
                     	   	echo '</td>';
                     	   	echo '</tr>';
                         }
