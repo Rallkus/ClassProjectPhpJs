@@ -3,7 +3,8 @@
     include($path . "module/highratedRecipes/model/DAORecipe.php");
     //include ("module/recipe/model/DAORecipe.php");
     //session_start();
-
+    @session_start();
+    if(isset($_SESSION['user'])){
     switch($_GET['op']){
         case 'list';
             try{
@@ -23,6 +24,7 @@
     		}
             break;
             case 'read_modal';
+
                     //echo $_GET["modal"];
                     //exit;
 
@@ -50,4 +52,6 @@
             //include("view/inc/error404.php");
           //  break;
 
+    }}else{
+      include("view/inc/error404.php");
     }

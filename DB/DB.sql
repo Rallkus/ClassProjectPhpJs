@@ -45,7 +45,34 @@ CREATE TABLE IF NOT EXISTS `ingredients` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+CREATE TABLE IF NOT EXISTS `recipe` (
+  `email` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `type` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+CREATE TABLE IF NOT EXISTS `cocina` (
+  `id` int AUTO_INCREMENT,
+  `nombre` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `imagen` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `precio` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+INSERT INTO cocina (nombre, imagen, precio) VALUES ("Sartén", "", "17,75");
+INSERT INTO cocina (nombre, imagen, precio) VALUES ("Olla", "", "12");
+INSERT INTO cocina (nombre, imagen, precio) VALUES ("Mantel", "", "5");
+INSERT INTO cocina (nombre, imagen, precio) VALUES ("Pack de vasos de 6", "", "5");
+INSERT INTO cocina (nombre, imagen, precio) VALUES ("Pack de cuchillos de 6", "", "3");
+INSERT INTO cocina (nombre, imagen, precio) VALUES ("Cuchillo jamonero", "", "7");
+INSERT INTO cocina (nombre, imagen, precio) VALUES ("Nevera modelo A4G", "", "270");
+INSERT INTO cocina (nombre, imagen, precio) VALUES ("Horno eléctrico modelo 7B805", "", "180");
+INSERT INTO cocina (nombre, imagen, precio) VALUES ("Microondas", "", "11,99");
+INSERT INTO cocina (nombre, imagen, precio) VALUES ("Lavavajillas", "", "300");
+
+UPDATE cocina SET imagen = "module/cocina/view/image/cocina.jpg"
 /*CREATE TABLE IF NOT EXISTS `usuario` (
   `user` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `pass` varchar(50) COLLATE utf8_spanish_ci NOT NULL,

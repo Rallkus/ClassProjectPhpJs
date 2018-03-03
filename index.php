@@ -1,8 +1,6 @@
 <?php
     session_start();
-    if ((isset($_GET['page'])) && ($_GET['page']==="controller_song") ){
-		include("view/inc/top_page_song.php");
-	}else if((isset($_GET['page'])) && ($_GET['page']==="controller_recipe") ){
+    if((isset($_GET['page'])) && ($_GET['page']==="controller_recipe") ){
     include("view/inc/top_page_recipe.php");
   }else if(!(isset($_GET['page'])) || ($_GET['page']==="homepage") ){
     include("view/inc/top_page_home.php");
@@ -10,6 +8,14 @@
     include("view/inc/top_page_contactus.php");
   }else if((isset($_GET['page'])) && ($_GET['page']==="controller_recipes") ){
     include("view/inc/top_page_recipes.php");
+  }else if((isset($_GET['page'])) && ($_GET['page']==="controller_login") ){
+    include("view/inc/top_page_login.php");
+  }else if((isset($_GET['page'])) && ($_GET['page']==="controller_profile") ){
+    include("view/inc/top_page_profile.php");
+  }else if((isset($_GET['page'])) && ($_GET['page']==="controller_restaurants") ){
+    include("view/inc/top_page_restaurants.php");
+  }else if((isset($_GET['page'])) && ($_GET['page']==="controller_cocina") ){
+    include("view/inc/top_page_cocina.php");
   }else{
 		include("view/inc/top_page.php");
 	}
@@ -20,7 +26,7 @@
     	    include("view/inc/header.php");
     	?>
     </div>
-    <div id="menu">
+    <div id="nav">
 		<?php
 		    include("view/inc/menu.php");
 		?>
@@ -29,13 +35,12 @@
     	<?php
 		    include("view/inc/pages.php");
 		?>
-        <br style="clear:both;" />
     </div>
-    <div id="footer">
+    <!--<div id="footer"> -->
 	    <?php
 	        include("view/inc/footer.php");
 	    ?>
-    </div>
+    <!-- </div> -->
 </div>
 <?php
     include("view/inc/bottom_page.php");

@@ -23,7 +23,7 @@
                         foreach ($rdo as $row) {
                        		echo '<tr>';
                           print_r($row);
-                    	   	echo '<td width=125>'. $row['puntuation'] . '</td>';
+                    	   	echo '<td width=125ç>'. $row['puntuation'] . '</td>';
                     	   	echo '<td width=125>'. $row['difficult'] . '</td>';
                     	   	echo '<td width=125>'. $row['name'] . '</td>';
                     	   	echo '<td width=350>';

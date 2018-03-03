@@ -3,7 +3,8 @@
     include($path . "module/recipe/model/DAORecipe.php");
     //include ("module/recipe/model/DAORecipe.php");
     //session_start();
-
+    @session_start();
+    if(isset($_SESSION['user']) && $_SESSION['user']['type']=="admin"){
     switch($_GET['op']){
         case 'list';
             try{
@@ -280,4 +281,6 @@
             include("view/inc/error404.php");
             break;
 
+    }}else{
+      include("view/inc/error404.php");
     }
