@@ -12,7 +12,13 @@ include($path . "module/cocina/model/DAOCocina.php");
             include("module/cocina/view/list_cocina.php");
         break;
         case 'carrito';
-        include("module/cocina/view/list_carrito.php");
+        @session_start();
+        if(isset($_SESSION['user'])){
+          include("module/cocina/view/list_carrito.php");
+        }else{
+          include("view/inc/error404.php");
+        }
+
         break;
         case 'comprar';
         $i=0;
