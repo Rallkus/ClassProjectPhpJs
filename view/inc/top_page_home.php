@@ -22,10 +22,12 @@
   <style>
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
-      width: 33%;
-      height: 80%;
+      width: 50%;
+      height: 40%;
       margin: auto;
+      align-self: center;
   }
   </style>
+  <link href="view/css/header.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="homepage">

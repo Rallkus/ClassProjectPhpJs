@@ -27,6 +27,7 @@
       <script src="module/profile/view/validate_change_name.js"></script>
       <script src="module/profile/view/validate_change_pass.js"></script>
       <script src="module/profile/view/validate_profile.js"></script>
+      <link href="view/css/header.css" rel="stylesheet" type="text/css" />
 
     </head>
     <body class="homepage">

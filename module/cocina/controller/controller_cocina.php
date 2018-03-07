@@ -37,7 +37,6 @@ include($path . "module/cocina/model/DAOCocina.php");
             $conexion = connect::con("taste");
             $item['id']=$id;
             $rdo= $daococina -> insert_linea($item);
-            echo $rdo;
             $rdo= $daococina -> update_linea($item);
             connect::close($conexion);}
         }

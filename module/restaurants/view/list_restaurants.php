@@ -1,60 +1,47 @@
 <div id="contenido">
     <div class="container">
-    	<div class="row">
-    			<h3>LISTA DE RESTAURANTES</h3>
-    	</div>
-    	<div class="row">
-
-    		<table>
-                <tr>
-                    <td width=125><b>Image</b></th>
-                    <td width=125><b>Name</b></th>
-                    <td width=125><b>Location</b></th>
-                    <th width=350><b>Website</b></th>
-                </tr>
-                <?php
-                    if ($rdo->num_rows === 0){
-                        echo '<tr>';
-                        echo '<td align="center"  colspan="3">NO HAY NINGUNA RECETA</td>';
-                        echo '</tr>';
-                    }else{
-                        foreach ($rdo as $row) {
-                       		echo '<tr>';
-                          print_r($row);
-                    	   	echo '<td width=125ç>'. $row['puntuation'] . '</td>';
-                    	   	echo '<td width=125>'. $row['difficult'] . '</td>';
-                    	   	echo '<td width=125>'. $row['name'] . '</td>';
-                    	   	echo '<td width=350>';
-                          print ("<div class='recipe Button_blue' id='".$row['id']."'>Read</div>");  //READ
-                    	    //echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-                    	   	//echo '<a class="Button_blue" href="index.php?page=controller_recipe&op=read&id='.$row['id'].'">Read</a>';
-                    	   	echo '&nbsp;';
-                    	   	echo '<a class="Button_green" href="index.php?page=controller_recipe&op=update&id='.$row['id'].'">Update</a>';
-                    	   	echo '&nbsp;';
-                    	   	echo '<a class="Button_red" href="index.php?page=controller_recipe&op=delete&id='.$row['id'].'">Delete</a>';
-                    	   	echo '</td>';
-                    	   	echo '</tr>';
-                        }
-                    }
-                ?>
-            </table>
-    	</div>
+      <div class="divContenedor">
+		<h2>LISTA DE RESTAURANTES</h2>
+		<div class="divLabels">
+			<label for="cboPaises">Paises</label>
+		</div>
+		<div class="divSelects">
+			<select id="cboComunidades">
+				<option value="0">Seleccione una comunidad autónoma</option>
+				<?php
+          echo '<option value="1">'.utf8_encode("Comunidad Valenciana").'</option>';
+          echo '<option value="2">'.utf8_encode(Madrid).'</option>';
+          echo '<option value="3">'.utf8_encode(Barcelona).'</option>';
+				?>
+			</select>
+		</div>
+		<br><br>
+		<div class="divLabels">
+			<label for="cboCiudades">Ciudades</label>
+		</div>
+		<div class="divSelects">
+			<select id="cboCiudades">
+				<option value="0">Seleccione una ciudad</option>
+			</select>
+		</div>
+	</div>
     </div>
+
+</div>
+<div class="tags" >
+  Introduce un restaurante de la zona
+<input id="tags">
 </div>
 
-<section id="recipe_modal">
-    <div id="details_recipe" hidden>
+<section id="api_modal">
+    <div id="details_restaurant" hidden>
         <div id="details">
             <div id="container">
-                Puntuation: <div id="puntuation"></div></br>
-                Difficulty: <div id="difficulty"></div></br>
-                Name of the recipe: <div id="name_recipe"></div></br>
-                Number of persons: <div id="number_persons"></div></br>
-                Time expected: <div id="time"></div></br>
-                Vegan food: <div id="vegan"></div></br>
-                Short description: <div id="description"></div></br>
-                Instruction: <div id="instruction"></div></br>
-                Image: <div id="image"></div>
+              <div id="image"></div>
+                Name: <div id="name"></div></br>
+                Address: <div id="address"></div></br>
+                Contact phone: <div id="phone"></div></br>
+                Rating: <div id="rating"></div></br>
         </div>
     </div>
 </section>

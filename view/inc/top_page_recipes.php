@@ -19,6 +19,7 @@
   <script src="view/assets/js/util.js"></script>
   <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
   <script src="view/assets/js/main.js"></script>
+  <link href="view/css/header.css" rel="stylesheet" type="text/css" />
   <style type="text/css">
   section {
       padding-top:50px;

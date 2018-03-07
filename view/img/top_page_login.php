@@ -18,6 +18,5 @@
       <script src="module/login/view/validate_logout.js"></script>
       <script src="module/login/view/validate_register.js"></script>
       <script src="module/login/view/validate_login.js"></script>
-      <link href="view/css/header.css" rel="stylesheet" type="text/css" />
     </head>
     <body class="homepage">
