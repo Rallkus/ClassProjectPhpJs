@@ -25,8 +25,6 @@ $(document).ready(function() {
   }try{
     comprar.onclick = function() {
       console.log({cart : cart});
-      //TODO enviar los datos por post y meterlos en la base de datos
-      //var data_to_send = $.serialize(cart);
 
 $.ajax({
     type: "POST",

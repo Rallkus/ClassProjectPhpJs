@@ -44,7 +44,6 @@
 
 							<!-- Contact -->
 								<section>
-									<h2 class="major"><span>Get in touch</span></h2>
 									<ul class="contact">
 										<li><a class="icon fa-facebook" href="#"><span class="label">Facebook</span></a></li>
 										<li><a class="icon fa-twitter" href="#"><span class="label">Twitter</span></a></li>
