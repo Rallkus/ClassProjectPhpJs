@@ -1,32 +1,120 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
--- http://www.phpmyadmin.net
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-06-2016 a las 08:19:43
--- Versión del servidor: 5.5.49-0ubuntu0.14.04.1
--- Versión de PHP: 5.5.9-1ubuntu4.16
+-- Tiempo de generación: 09-03-2018 a las 15:50:47
+-- Versión del servidor: 10.1.25-MariaDB
+-- Versión de PHP: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `DB`
+-- Base de datos: `taste`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Estructura de tabla para la tabla `cocina`
 --
-CREATE TABLE IF NOT EXISTS `recipe` (
-  `id` int AUTO_INCREMENT,
+
+CREATE TABLE `cocina` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `imagen` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `precio` varchar(255) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `cocina`
+--
+
+INSERT INTO `cocina` (`id`, `nombre`, `imagen`, `precio`) VALUES
+(1, 'Sarten', 'module/cocina/view/image/cocina.jpg', '17.75'),
+(2, 'Olla', 'module/cocina/view/image/cocina.jpg', '12'),
+(3, 'Mantel', 'module/cocina/view/image/cocina.jpg', '5'),
+(4, 'Pack de vasos de 6', 'module/cocina/view/image/cocina.jpg', '5'),
+(5, 'Pack de cuchillos de 6', 'module/cocina/view/image/cocina.jpg', '3'),
+(6, 'Cuchillo jamonero', 'module/cocina/view/image/cocina.jpg', '7'),
+(7, 'Nevera modelo A4G', 'module/cocina/view/image/cocina.jpg', '270'),
+(8, 'Horno electrico modelo 7B805', 'module/cocina/view/image/cocina.jpg', '180'),
+(9, 'Microondas', 'module/cocina/view/image/cocina.jpg', '11.99'),
+(10, 'Lavavajillas', 'module/cocina/view/image/cocina.jpg', '300');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `compra`
+--
+
+CREATE TABLE `compra` (
+  `id` int(11) NOT NULL,
+  `usuario` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `fecha` varchar(255) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `compra`
+--
+
+INSERT INTO `compra` (`id`, `usuario`, `fecha`) VALUES
+(26, 'admin', '2018-03-03 19:26:47'),
+(27, 'admin', '2018-03-05 16:13:53');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ingredients`
+--
+
+CREATE TABLE `ingredients` (
+  `id` int(11) NOT NULL,
+  `ingredient` varchar(255) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `linea`
+--
+
+CREATE TABLE `linea` (
+  `id` int(11) NOT NULL,
+  `id_compra` int(11) DEFAULT NULL,
+  `id_producto` int(11) DEFAULT NULL,
+  `cantidad` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `precio` varchar(255) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `linea`
+--
+
+INSERT INTO `linea` (`id`, `id_compra`, `id_producto`, `cantidad`, `precio`) VALUES
+(48, 26, 1, '1', '17.75'),
+(49, 26, 5, '1', '3'),
+(50, 26, 4, '1', '5'),
+(51, 27, 4, '2', '10'),
+(52, 27, 1, '1', '17.75');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `recipe`
+--
+
+CREATE TABLE `recipe` (
+  `id` int(11) NOT NULL,
   `puntuation` int(20) NOT NULL,
   `difficult` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `name` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
@@ -35,67 +123,107 @@ CREATE TABLE IF NOT EXISTS `recipe` (
   `vegan` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `description` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `instruction` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`id`)
+  `image` varchar(255) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
-CREATE TABLE IF NOT EXISTS `ingredients` (
-  `id` int,
-  `ingredient` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+--
+-- Volcado de datos para la tabla `recipe`
+--
 
-CREATE TABLE IF NOT EXISTS `recipe` (
+INSERT INTO `recipe` (`id`, `puntuation`, `difficult`, `name`, `number_persons`, `estimated_time`, `vegan`, `description`, `instruction`, `image`) VALUES
+(27, 1, '1', 'c', '1', '2.0', 'No', 'c', 'c', 'module/recipe/view/uploads/pic03.jpg'),
+(28, 1, '1', 'd', '1', '3.0', 'No', 'd', 'd', 'module/recipe/view/uploads/banner.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `user`
+--
+
+CREATE TABLE `user` (
   `email` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `username` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `type` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
-CREATE TABLE IF NOT EXISTS `cocina` (
-  `id` int AUTO_INCREMENT,
-  `nombre` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  `imagen` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  `precio` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
-INSERT INTO cocina (nombre, imagen, precio) VALUES ("Sartén", "", "17,75");
-INSERT INTO cocina (nombre, imagen, precio) VALUES ("Olla", "", "12");
-INSERT INTO cocina (nombre, imagen, precio) VALUES ("Mantel", "", "5");
-INSERT INTO cocina (nombre, imagen, precio) VALUES ("Pack de vasos de 6", "", "5");
-INSERT INTO cocina (nombre, imagen, precio) VALUES ("Pack de cuchillos de 6", "", "3");
-INSERT INTO cocina (nombre, imagen, precio) VALUES ("Cuchillo jamonero", "", "7");
-INSERT INTO cocina (nombre, imagen, precio) VALUES ("Nevera modelo A4G", "", "270");
-INSERT INTO cocina (nombre, imagen, precio) VALUES ("Horno eléctrico modelo 7B805", "", "180");
-INSERT INTO cocina (nombre, imagen, precio) VALUES ("Microondas", "", "11,99");
-INSERT INTO cocina (nombre, imagen, precio) VALUES ("Lavavajillas", "", "300");
-
-UPDATE cocina SET imagen = "module/cocina/view/image/cocina.jpg"
-/*CREATE TABLE IF NOT EXISTS `usuario` (
-  `user` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `pass` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `name` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `dni` varchar(9) COLLATE utf8_spanish_ci NOT NULL,
-  `sex` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `birthdate` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
-  `age` int(2) NOT NULL,
-  `country` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
-  `language` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
-  `comment` varchar(500) COLLATE utf8_spanish_ci NOT NULL,
-  `hobby` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`user`)
+  `fecha_nacimiento` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `especialidades` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `aficiones` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `idioma` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `usuario`
+-- Volcado de datos para la tabla `user`
 --
 
-INSERT INTO `usuario` (`user`, `pass`, `name`, `dni`, `sex`, `birthdate`, `age`, `country`, `language`, `comment`, `hobby`) VALUES
-('ancoca', 'User-123', 'angel', '48292627X', 'Hombre', '19/07/1993', 22, 'Francia', 'Ingles:Frances:', 'Welcome to this page', 'Informatica:Alimentacion:Automovil:'),
-('daurgil', 'User-123', 'david', '87654321X', 'Hombre', '06/06/1990', 25, 'EspaÃ±a', 'EspaÃ±ol:Ingles:', 'Hoal mundo', 'Informatica:'),
-('usuario', 'User-123', 'usuario', '12345678Z', 'Hombre', '16/05/1980', 36, 'EspaÃ±a', 'Ingles:', 'Adios mundo', 'Informatica:Automovil:');
+INSERT INTO `user` (`email`, `username`, `password`, `type`, `fecha_nacimiento`, `especialidades`, `aficiones`, `idioma`) VALUES
+('a@gmail.com', 'd', 'd', 'client', '', '', '', 'InglÃ©s'),
+('s@gmail.com', 's', 's', 'client', '', '', '', 'InglÃ©s'),
+('serhuegi@gmail.com', 'admin', 'admin', 'admin', '01/02/2018', 'Verduras,Pescado', 'Bailar,Cocinar', 'InglÃ©s');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `cocina`
+--
+ALTER TABLE `cocina`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `compra`
+--
+ALTER TABLE `compra`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `ingredients`
+--
+ALTER TABLE `ingredients`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `linea`
+--
+ALTER TABLE `linea`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `recipe`
+--
+ALTER TABLE `recipe`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`email`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `cocina`
+--
+ALTER TABLE `cocina`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT de la tabla `compra`
+--
+ALTER TABLE `compra`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+--
+-- AUTO_INCREMENT de la tabla `linea`
+--
+ALTER TABLE `linea`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+--
+-- AUTO_INCREMENT de la tabla `recipe`
+--
+ALTER TABLE `recipe`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
