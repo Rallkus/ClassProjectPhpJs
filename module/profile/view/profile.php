@@ -4,7 +4,14 @@
           <!-- aficiones, datepicker, cambiar usuario, cambiar password, cambiar email, especialidades (pasta, verduras, carne, pescado) -->
           <?php print_r($_SESSION); ?>
           <tr>
-              <td>Fecha de publicación: </td>
+            <?php if($_SESSION['user']['idioma']=="Español"){
+              ?>
+              <td>Fecha de publicación:</td>
+          <?php   }else{
+            ?>
+            <td>Publish date: </td>
+          <?php }
+          ?>
               <td><input type="text" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="fecha_nacimiento" value="<?php echo $_SESSION['user']['fecha_nacimiento']?>" readonly/></td>
               <td><font color="red">
                   <span id="error_fecha" class="error">
@@ -33,7 +40,14 @@
 
           </tr>
           <tr>
-              <td>Especialidades: </td>
+            <?php if($_SESSION['user']['idioma']=="Español"){
+              ?>
+              <td>Especialidades</td>
+          <?php   }else{
+            ?>
+            <td>Specialties: </td>
+          <?php }
+          ?>
               <?php
                   $especialidad=explode(",", $_SESSION['user']['especialidades']);
               ?>
@@ -93,8 +107,13 @@
               </font></font></td>
           </tr>
           <tr>
-              <td>Aficiones: </td>
-              <?php
+            <?php if($_SESSION['user']['idioma']=="Español"){
+              ?>
+              <td>Aficiones</td>
+          <?php   }else{
+            ?>
+            <td>Hobbies: </td>
+          <?php }
                   $afi=explode(",", $_SESSION['user']['aficiones']);
               ?>
               <td>
@@ -141,10 +160,39 @@
               </font></font></td>
           </tr>
             <tr>
-                <td><button type="button" name="profile" id="profile">Actualizar</button></td>
+
+                <?php if($_SESSION['user']['idioma']=="Español"){
+                  ?>
+                  <td><button type="button" name="profile" id="profile">Actualizar</button></td>
+              <?php   }else{
+                ?>
+                <td><button type="button" name="profile" id="profile">Update</button></td>
+              <?php }
+              ?>
+              <?php if($_SESSION['user']['idioma']=="Español"){
+                ?>
                 <td align="right"><a href="index.php?page=controller_profile&op=change_name">Cambiar nombre de usuario</a></td>
-                <td align="right"><a href="index.php?page=controller_profile&op=change_password">Cambiar contraseña</a></td>
-                <td align="right"><a href="index.php?page=controller_profile&op=change_email">Cambiar email</a></td>
+            <?php   }else{
+              ?>
+              <td align="right"><a href="index.php?page=controller_profile&op=change_name">Change username</a></td>
+            <?php }
+            ?>
+            <?php if($_SESSION['user']['idioma']=="Español"){
+              ?>
+              <td align="right"><a href="index.php?page=controller_profile&op=change_password">Cambiar contraseña</a></td>
+          <?php   }else{
+            ?>
+            <td align="right"><a href="index.php?page=controller_profile&op=change_password">Change password</a></td>
+          <?php }
+          ?>
+          <?php if($_SESSION['user']['idioma']=="Español"){
+            ?>
+            <td align="right"><a href="index.php?page=controller_profile&op=change_email">Cambiar email</a></td>
+        <?php   }else{
+          ?>
+          <td align="right"><a href="index.php?page=controller_profile&op=change_email">Change email</a></td>
+        <?php }
+        ?>
             </tr>
         </table>
     </form>
