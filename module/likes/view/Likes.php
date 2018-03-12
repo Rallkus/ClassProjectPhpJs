@@ -13,10 +13,9 @@
                     <th width=125 align="left"><b>Añadir al carrito</b></th>
                 </tr>
                 <?php
-                print_r($_POST);
                     if ($rdo->num_rows === 0){
                         echo '<tr>';
-                        echo '<td align="center"  colspan="3">Lo siento, ha habido un error</td>';
+                        echo '<td align="center"  colspan="3">No tienes ningún like</td>';
                         echo '</tr>';
                     }else{
                         foreach ($rdo as $row) {
@@ -28,23 +27,11 @@
                           echo '<td width=125>'. $row['precio'] .'</td>';
                           echo '<td width=125><input type="text" id="'.$row['id'].'" name="cant" placeholder="" value="0" readonly/></td>';
                           echo '<td width=250><button name="'.$row['id'].'" class="button"><img src="view/img/anadir.png"></button>'.'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.'<button name="'.$row['id'].'" class="button-"><img src="view/img/eliminar.png"></td>';
-                          if(isset($_SESSION['user'])){
-                            echo '<td width=250><button name="'.$row['id'].'" class="like">LIKE</button>';
-                          }
                     	   	echo '</td>'; echo '<input type="hidden" id="'.$row['id'].'precio" value="'. $row['precio'] .'"></input>';
                           echo '<input type="hidden" id="'.$row['id'].'nombre" value="'. $row['nombre'] .'"></input>';
                     	   	echo '</tr>';
                         }
-                    }
-                    @session_start();
-                  if(isset($_SESSION['user'])){  ?>
-                    <td><button type="button" name="checkout" id="checkout">Checkout</button></td>
-                    <?php
-                  }else{  ?>
-                    <td><button type="button" name="login" id="login">Checkout</button></td>
-                    <?php
-                  }
-                ?>
+                    } ?>
                 <input type="hidden" value="<?php echo($rdo -> num_rows); ?>" id="number"></input>
             </table>
     	</div>

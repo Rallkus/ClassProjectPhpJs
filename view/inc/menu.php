@@ -17,6 +17,7 @@ if(!isset($_SESSION['user']['type'])){ ?>
 						<ul>
 							<li><a href="index.php?page=homepage">Inicio</a></li>
 							<li><a href="index.php?page=controller_profile&op=profile"><?php echo $_SESSION['user']['username']; ?></a></li>
+							<li><a href="index.php?page=controller_likes&op=likes">Likes</a></li>
 							<li><a href="index.php?page=aboutus">Conocenos</a></li>
 	            <li><a href="index.php?page=contactus">Contacto</a></li>
 	            <li><a href="index.php?page=controller_recipes&op=list">Recetas más valoradas</a></li>
@@ -30,6 +31,7 @@ if(!isset($_SESSION['user']['type'])){ ?>
 						<ul>
 							<li><a href="index.php?page=homepage">Inicio</a></li>
 							<li><a href="index.php?page=controller_profile&op=profile"><?php echo $_SESSION['user']['username']; ?></a></li>
+							<li><a href="index.php?page=controller_likes&op=likes">Likes</a></li>
 							<li><a href="index.php?page=aboutus">Conocenos</a></li>
 	            <li><a href="index.php?page=contactus">Contacto</a></li>
 	            <li><a href="index.php?page=controller_recipe&op=list">Receta</a></li>
@@ -57,6 +59,7 @@ if(!isset($_SESSION['user']['type'])){ ?>
 							<ul>
 								<li><a href="index.php?page=homepage">Home</a></li>
 								<li><a href="index.php?page=controller_profile&op=profile"><?php echo $_SESSION['user']['username']; ?></a></li>
+								<li><a href="index.php?page=controller_likes&op=likes">Likes</a></li>
 								<li><a href="index.php?page=aboutus">About us</a></li>
 		            <li><a href="index.php?page=contactus">Contact</a></li>
 		            <li><a href="index.php?page=controller_recipes&op=list">Most rated recipes</a></li>
@@ -70,6 +73,7 @@ if(!isset($_SESSION['user']['type'])){ ?>
 							<ul>
 								<li><a href="index.php?page=homepage">Home</a></li>
 								<li><a href="index.php?page=controller_profile&op=profile"><?php echo $_SESSION['user']['username']; ?></a></li>
+								<li><a href="index.php?page=controller_likes&op=likes">Likes</a></li>
 								<li><a href="index.php?page=aboutus">About us</a></li>
 		            <li><a href="index.php?page=contactus">Contact</a></li>
 		            <li><a href="index.php?page=controller_recipe&op=list">Recipe</a></li>

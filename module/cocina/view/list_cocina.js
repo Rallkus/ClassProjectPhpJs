@@ -91,6 +91,22 @@ $(".button").click(function() {
   document.getElementById(id).value =parseInt(document.getElementById(id).value, 10)+ 1;
   addToCart(id);
 });
+$(".like").click(function() {
+  var id = $(this).attr('name'); // $(this) refers to button that was clicked
+
+          dataTosend='id='+id;
+            $.ajax({
+              type: "POST",
+              url: "module/cocina/controller/controller_cocina.php?op=like",
+              data: dataTosend,
+              datatype :'json',
+              success: function(data){
+
+              }
+        });
+
+
+});
 $(".button-").click(function() {
   var id = $(this).attr('name'); // $(this) refers to button that was clicked
   if(parseInt(document.getElementById(id).value, 10)>0){
@@ -116,7 +132,7 @@ try{
         alert("No tienes nada seleccionado");
       }else{
         window.location.href = "index.php?page=controller_cocina&op=carrito";
-      }    
+      }
       //TODO ver los elementos que valen más de 0 y añadirlos al carrito
       for (var j in cart) {
         console.log(cart[j].Price + cart[j].Product + cart[j].Qty);

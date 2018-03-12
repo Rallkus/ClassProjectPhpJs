@@ -32,6 +32,34 @@
             connect::close($conexion);
 			return $res;
 		}
+    function insert_like($id){
+          @session_start();
+          $user=$_SESSION['user']['email'];
+        	$sql = " INSERT INTO me_gusta (id, id_cocina)"
+        		. " VALUES ('$user', $id)";
+            $conexion = connect::con("taste");
+            $res = mysqli_query($conexion, $sql);
+            connect::close($conexion);
+			return $res;
+		}
+    function delete_like($id){
+          @session_start();
+          $user=$_SESSION['user']['email'];
+        	$sql = " DELETE FROM me_gusta WHERE id_cocina='$id' AND id='$user'";
+            $conexion = connect::con("taste");
+            $res = mysqli_query($conexion, $sql);
+            connect::close($conexion);
+			return $res;
+		}
+    function select_like($id){
+          @session_start();
+          $user=$_SESSION['user']['email'];
+        	$sql = " SELECT id, id_cocina FROM me_gusta WHERE id_cocina='$id' AND id='$user'";
+            $conexion = connect::con("taste");
+            $res = mysqli_query($conexion, $sql);
+            connect::close($conexion);
+			return $res;
+		}
     function insert_linea($datos){
           $product=$datos['Product'];
 			    $quantity=$datos['Qty'];

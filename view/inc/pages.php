@@ -13,6 +13,9 @@ if(isset($_GET['page'])){
 		case "controller_profile";
 		include("module/profile/controller/".$_GET['page'].".php");
 		break;
+		case "controller_likes";
+		include("module/likes/controller/".$_GET['page'].".php");
+		break;
 		case "controller_cocina";
 		include("module/cocina/controller/".$_GET['page'].".php");
 		break;

@@ -11,6 +11,24 @@ include($path . "module/cocina/model/DAOCocina.php");
         }
             include("module/cocina/view/list_cocina.php");
         break;
+        case 'like';
+            try{
+              $error=true;
+              $daococina = new DAOCocina();
+              $rdo = $daococina->select_like($_POST['id']);
+              if($rdo){
+                $error = false;
+              }
+              echo !$rdo;
+              if($error){
+              }else{
+                $rdo = $daococina->delete_like($_POST['id']);
+                $rdo = $daococina->insert_like($_POST['id']);
+              }
+
+            }catch (Exception $e){
+            }
+            break;
         case 'carrito';
         @session_start();
         if(isset($_SESSION['user'])){
